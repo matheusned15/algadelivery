@@ -1,4 +1,4 @@
-package com.nedware.Courier_Management;
+package com.nedware.courier.management;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
