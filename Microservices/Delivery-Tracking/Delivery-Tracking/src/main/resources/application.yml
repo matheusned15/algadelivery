@@ -1,11 +1,22 @@
+
 spring:
   application:
     name: delivery-tracking
+
+  datasource:
+    url: jdbc:postgresql://localhost:55432/deliverydb
+    username: postgres
+    password: postgres
+
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: false
-  datasource:
-    url: jdbc:postgresql://localhost:5432/deliverydb
-    username: postgres
-    password: postgres
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+logging:
+  level:
+    org.springframework.boot.context.config: DEBUG
+    com.zaxxer.hikari: DEBUG
+    org.springframework.jdbc.core: DEBUG
+    org.postgresql: DEBUG
