@@ -13,10 +13,13 @@ spring:
       ddl-auto: update
     show-sql: false
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-
-logging:
-  level:
-    org.springframework.boot.context.config: DEBUG
-    com.zaxxer.hikari: DEBUG
-    org.springframework.jdbc.core: DEBUG
-    org.postgresql: DEBUG
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.type.mapping:
+          delivery-placed-event:com.nedware.delivery.tracking.domain.event.DeliveryPlacedEvent,
+          delivery-picked-up-event:com.nedware.delivery.tracking.domain.event.DeliveryPickedUpEvent,
+          delivery-fulfilled-event:com.nedware.delivery.tracking.domain.event.DeliveryFulfilledEvent
