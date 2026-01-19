@@ -14,4 +14,3 @@ public class DeliveryPlacedEvent {
     private final OffsetDateTime occurredAt;
     private final UUID deliveryId;
 }
-

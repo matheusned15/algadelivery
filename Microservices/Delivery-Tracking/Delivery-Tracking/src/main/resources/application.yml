@@ -20,6 +20,15 @@ spring:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
         spring.json.type.mapping:
-          delivery-placed-event:com.nedware.delivery.tracking.domain.event.DeliveryPlacedEvent,
-          delivery-picked-up-event:com.nedware.delivery.tracking.domain.event.DeliveryPickedUpEvent,
           delivery-fulfilled-event:com.nedware.delivery.tracking.domain.event.DeliveryFulfilledEvent
+          delivery-picked-up-event:com.nedware.delivery.tracking.domain.event.DeliveryPickedUpEvent,
+          delivery-placed-event:com.nedware.delivery.tracking.domain.event.DeliveryPlacedEvent
+
+
+eureka:
+  client:
+    server-url:
+      default-zone: http://localhost:8761/eureka/
+  instance:
+    instance-id: ${random.value}
+    prefer-ip-address: true
